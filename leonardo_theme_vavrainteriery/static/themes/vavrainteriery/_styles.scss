@@ -5,3 +5,12 @@
 // Vendor Components
 @import "/bootstrap/scss/bootstrap";
 
+@font-face {
+    font-family: Raleway;
+    src: url(/static/fonts/Raleway-ExtraLight.ttf);
+}
+
+@font-face {
+    font-family: RalewayRegular;
+    src: url(/static/fonts/Raleway-Regular.ttf);
+}

@@ -1,0 +1,25 @@
+{% extends widget.get_base_template %}
+
+{% load feincms_page_tags %}
+
+{% block content %}
+{% feincms_nav root level=level depth=1 as toplevel %}
+<div class="col-xs-12">
+  <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+</div>
+<div class="navbar-collapse collapse" id="top-nav">
+  <ul class="nav navbar-nav{% if widget.align == 'right' %} navbar-right{% endif %}">
+  {% if depth == 1 %}
+  {% for page in toplevel %}
+    <li class="{% if page|is_equal_or_parent_of:current %}active{% endif %}">
+      <label for='slider_{{ forloop.counter }}' class='nav-label'>{{ page.title }}</label>
+    </li>
+  {% endfor %}
+  {% endif %}
+  </ul>
+</div>
+{% endblock %}
