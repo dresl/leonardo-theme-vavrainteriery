@@ -8,39 +8,6 @@
     {% include "_header.html" %}
     {% analytical_head_bottom %}
   </head>
-  <style type="text/css">
-    .navbar .navbar-nav {
-      display: inline-block;
-      float: none;
-      vertical-align: top;
-    }
-
-    .navbar .navbar-collapse {
-      text-align: center;
-    }
-    .nav-label:hover {
-      color: #CCC;
-    }
-    .nav-label {
-      padding: 20px 35px;
-      color: white;
-      font-size: 13px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      font-family: RalewayRegular;
-      text-transform: uppercase;
-    }
-    h1.main-heading {
-      color: white;
-      font-family: RalewayRegular;
-      font-size: 65px;
-    }
-    .styled-thumbnail {
-      display: block;
-      margin-bottom: 20px;
-      background-color: #ffffff;
-    }
-  </style>
   <body id="{% block body_id %}main_content{% endblock %}" ng-app='horizon.app' ng-strict-di class="">
     <noscript>
       <div class="javascript_disabled_alert">
@@ -62,13 +29,6 @@
     <footer>
       {% feincms_render_region feincms_page "footer" request %}
     </footer>
-    <script type="text/javascript">
-      var footerHeight = $('footer').height() + 15;
-      $('.leonardo-widget.contextnavigation-base-default').css('height',window.innerHeight - footerHeight + 'px');
-      window.onresize = function(event) {
-        $('.leonardo-widget.contextnavigation-base-default').css('height',window.innerHeight - footerHeight + 'px');
-      };
-    </script>  
     {% include "horizon/_scripts.html" %}
     {% feincms_render_region feincms_page "helper" request %}
     <div id="modal_wrapper"></div>
