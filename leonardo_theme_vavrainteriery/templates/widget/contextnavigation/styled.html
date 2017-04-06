@@ -28,11 +28,11 @@
   $(".css-slider-wrapper .slider-pagination").append(label);
 
   // add next label
-  var labelNext = "<label for='slider_{{ forloop.counter }}' class='numb{{ forloop.counter }}'><i class='fa fa-arrow-circle-right'></i></label>";
+  var labelNext = "<label for='slider_{{ forloop.counter }}' class='numb{{ forloop.counter }} nav-arrows'><i class='fa fa-angle-right'></i></label>";
   $(".css-slider-wrapper .next.control").append(labelNext);
 
   // add previous label
-  var labelPre = "<label for='slider_{{ forloop.counter }}' class='numb{{ forloop.counter }}'><i class='fa fa-arrow-circle-left'></i></label>";
+  var labelPre = "<label for='slider_{{ forloop.counter }}' class='numb{{ forloop.counter }} nav-arrows'><i class='fa fa-angle-left'></i></label>";
   $(".css-slider-wrapper .previous.control").append(labelPre);
 
   // add content
