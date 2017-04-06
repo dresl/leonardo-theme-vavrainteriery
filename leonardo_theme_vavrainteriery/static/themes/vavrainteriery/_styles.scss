@@ -96,24 +96,31 @@ h1.main-heading {
 .slide1 {
   background: url('/static/img/hlavni_strana.jpg');
   left: 0;
+  background-size: cover;
+  background-position: center;
 }
 .slide2 {
-  background: url(/static/img/vavra_person.png),url(/static/img/o_mne_strana.jpg);
+  background: url(/static/img/vavra_person1.png),url(/static/img/o_mne_strana.jpg);
   background-repeat: no-repeat;
-  background-size: contain,cover;
   left: 100%;
 }
 .slide3 {
   background: url('/static/img/design_strana.jpg');
-  left: 200%
+  left: 200%;
+  background-size: cover;
+  background-position: center;
 }
 .slide4 {
   background: url('/static/img/galerie_strana.jpg');
   left: 300%;
+  background-size: cover;
+  background-position: center;
 }
 .slide5 {
   background: url('/static/img/kontakt_strana1.jpg');
   left: 400%;
+  background-size: cover;
+  background-position: center;
 }
 .slider > div {
   text-align: center;
