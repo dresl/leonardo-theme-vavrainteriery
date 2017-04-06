@@ -20,6 +20,10 @@ body {
   color: white;
 }
 
+div#modal_wrapper {
+    color: #101010;
+}
+
 .navbar .navbar-nav {
   display: inline-block;
   float: none;
@@ -94,7 +98,7 @@ h1.main-heading {
   left: 0;
 }
 .slide2 {
-  background: url(/static/img/vavra_final.png),url(/static/img/o_mne_strana.jpg);
+  background: url(/static/img/vavra_person.png),url(/static/img/o_mne_strana.jpg);
   background-repeat: no-repeat;
   background-size: contain,cover;
   left: 100%;
@@ -108,7 +112,7 @@ h1.main-heading {
   left: 300%;
 }
 .slide5 {
-  background: url('/static/img/kontakt_strana.jpg');
+  background: url('/static/img/kontakt_strana1.jpg');
   left: 400%;
 }
 .slider > div {
@@ -247,18 +251,25 @@ h1.main-heading {
 }
 
 @media only screen and (max-width: 767px) {
-.slider h2 {
-  font-size: 20px;
+  .slider h2 {
+    font-size: 20px;
+  }
+  .slider > div {
+    padding: 0 2%
+  }
+  .control label {
+    font-size: 35px;
+  }
+  .slider .button {
+    padding: 0 15px;
+  }
 }
-.slider > div {
-  padding: 0 2%
-}
-.control label {
-  font-size: 35px;
-}
-.slider .button {
-  padding: 0 15px;
-}
+
+a.styled-thumbnail img {
+  transition: all 0.3s ease;
+  &:hover {
+    opacity: 0.85;
+  }
 }
 
 footer {

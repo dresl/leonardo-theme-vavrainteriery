@@ -21,7 +21,7 @@
 <script type="text/javascript">
   // add input
   var input = "<input type='radio' name='slider' class='slide-radio{{ forloop.counter }}' {% if forloop.counter == 1 %}checked{% endif %} id='slider_{{ forloop.counter }}'>";
-  $(".css-slider-wrapper").prepend(input);
+  $(".slider-pagination").before(input);
 
   // add label to pagination
   var label = "<label for='slider_{{ forloop.counter }}' class='page{{ forloop.counter }}'></label>";
