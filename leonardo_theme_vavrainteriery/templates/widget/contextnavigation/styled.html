@@ -38,6 +38,16 @@
   // add content
   $(".slider.slide{{ forloop.counter }}").appendTo(".css-slider-wrapper");
 </script>
+<script type="text/javascript">
+$("body").click(function() {
+  setTimeout(function(){    
+    if ($('.slide-radio{{ forloop.counter }}').is(':checked')) {
+      $('.nav-label{{ forloop.counter }}').css('color', '#A5D12C');
+    } else {
+      $('.nav-label{{ forloop.counter }}').css('color', '#FFFFFF');
+    }
+  }, 10);
+});
+</script>
 {% endfor %}
-
 {% endblock content %}

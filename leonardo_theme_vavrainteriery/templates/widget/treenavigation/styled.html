@@ -19,7 +19,7 @@
       {% if forloop.counter == 1 %}
       <label style="padding: 0 30px" for='slider_{{ forloop.counter }}' class='nav-label'><img src="{% static 'img/logo_vavra.svg' %}"></label>
       {% else %}
-      <label for='slider_{{ forloop.counter }}' class='nav-label'>{{ page.title }}</label>
+      <label for='slider_{{ forloop.counter }}' class='nav-label nav-label{{ forloop.counter }}'>{{ page.title }}</label>
       {% endif %}
     </li>
   {% endfor %}
