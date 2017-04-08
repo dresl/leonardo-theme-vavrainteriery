@@ -33,9 +33,6 @@ div#modal_wrapper {
 .navbar .navbar-collapse {
   text-align: center;
 }
-.nav-label:hover {
-  color: #CCC!important;
-}
 .nav-label {
   padding: 20px 35px;
   color: white;
@@ -44,6 +41,9 @@ div#modal_wrapper {
   transition: all 0.2s ease;
   font-family: RalewayRegular;
   text-transform: uppercase;
+  &:hover {
+    color: #CCC!important;
+  }
 }
 h1.main-heading {
   color: white;
