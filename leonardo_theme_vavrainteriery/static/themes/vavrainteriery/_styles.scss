@@ -94,10 +94,10 @@ h1.main-heading {
 }
 /* each slide backgound color */
 .slide1 {
-  background: url('/static/img/hlavni_strana.jpg');
   left: 0;
   background-size: cover;
   background-position: center;
+  background-color: #808080;
 }
 .slide2 {
   background: url(/static/img/vavra_person1.png),url(/static/img/o_mne_strana.jpg);
@@ -281,6 +281,10 @@ a.styled-thumbnail img {
 
 .nav-arrows i {
   font-size: 80px;
+}
+
+.padding-none {
+  padding: 0px;
 }
 
 footer {

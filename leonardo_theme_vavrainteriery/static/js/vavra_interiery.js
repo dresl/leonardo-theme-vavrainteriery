@@ -16,4 +16,5 @@ setTimeout(function(){
             $('.slide2').css('background-size', insertSizeBg)
         };
     }, 300);
+document.getElementById('toolbar-video').play();
 });
