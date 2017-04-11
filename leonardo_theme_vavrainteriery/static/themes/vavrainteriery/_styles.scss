@@ -41,6 +41,7 @@ div#modal_wrapper {
   transition: all 0.2s ease;
   font-family: RalewayRegular;
   text-transform: uppercase;
+  letter-spacing: 1.5px;
   &:hover {
     color: #CCC!important;
   }
@@ -54,6 +55,12 @@ h1.main-heading {
   display: block;
   margin-bottom: 20px;
   background-color: #ffffff;
+}
+.full-width {
+  width: 100%;  
+}
+.gm-style .gm-style-iw {
+  color: #505050;
 }
 
 /* Slider wrapper*/

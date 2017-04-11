@@ -1,0 +1,157 @@
+{% extends widget.get_base_template %}
+{% load thumbnail %}
+
+{% block content %}
+<style type="text/css">
+.my-gallery img {
+  width: 100%;
+  height: auto;
+}
+.my-gallery figure {
+  display: block;
+  float: left;
+  margin: 0 5px 5px 0;
+  width: 100%;
+}
+.my-gallery figcaption {
+  display: none;
+}
+
+.pswp__button--arrow--left:before {
+  background: none;
+  font-family: fontawesome;
+  content: '\f0a8';
+  font-size: 50px;
+  left: 24px;
+}
+
+.pswp__button--arrow--right:before {
+  background: none;
+  font-family: fontawesome;
+  content: '\f0a9';
+  font-size: 50px;
+  left: 0;
+}
+
+.pswp__caption__center {
+  text-align: center;
+  max-width: 420px;
+  margin: 0 auto;
+  font-size: 16px;
+  padding: 10px;
+  line-height: 20px;
+  color: #CCC;
+  font-family: RalewayRegular;
+  letter-spacing: 0.6px;
+}
+
+.pswp__bg {
+    background: rgba(0, 0, 0, 0.67);
+}
+</style>
+{% block items %}
+
+{% for item in widget.get_items %}
+  <div class="my-gallery col-xs-3">
+    <figure itemprop="associatedMedia">
+      <a class="photoswipe-href-js-hide" href="{{ item.image.url }}" itemprop="contentUrl" data-size="1920x1080">
+      {% thumbnail item.image.file widget.thumb_geom format="PNG" as image %}
+      <img class="img-responsive" itemprop="thumbnail" src="{{ image.url }}" alt="" />
+      {% endthumbnail %}
+      </a>
+      <figcaption itemprop="caption description">{{ item.translation.name }}</figcaption>
+    </figure>
+    {% for sublink in item.relationship.category.link_set.all %}
+    <figure style="display: none" itemprop="associatedMedia">
+      <a class="photoswipe-href-js-hide" href="{{ sublink.image.url }}" itemprop="contentUrl" data-size="1920x1080">
+      {% thumbnail sublink.image.file widget.thumb_geom format="PNG" as image %}
+      <img class="img-responsive" itemprop="thumbnail" src="{{ image.url }}" alt="" />
+      {% endthumbnail %}
+      </a>
+      <figcaption itemprop="caption description">{{ sublink.translation.name }}</figcaption>
+    </figure>
+    {% endfor %}
+  </div>
+  {% endfor %}
+{% endblock %}
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+  <!-- Background of PhotoSwipe. 
+       It's a separate element, as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg"></div>
+
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+
+    <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+    <!-- don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+    </div>
+
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+
+      <div class="pswp__top-bar">
+
+        <!--  Controls are self-explanatory. Order can be changed. -->
+
+        <div class="pswp__counter"></div>
+
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader-active when preloader is running -->
+        <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+        </div>
+      </div>
+
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div> 
+      </div>
+
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+      </button>
+
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+      </button>
+
+      <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+$(".photoswipe-href-js-hide").click(function() {
+  $('.next.control').hide();
+  $('.previous.control').hide();
+  $('.slider-pagination').hide();
+  $('.navbar.navbar-fixed-top').hide();
+});
+$(".pswp__button--close").click(function() {
+  $('.next.control').show();
+  $('.previous.control').show();
+  $('.slider-pagination').show();
+  $('.navbar.navbar-fixed-top').show();
+});
+$(document).keyup(function(e) {
+  if (e.keyCode == 27) { // escape key maps to keycode `27`
+    $('.next.control').show();
+    $('.previous.control').show();
+    $('.slider-pagination').show();
+    $('.navbar.navbar-fixed-top').show();
+  }
+});
+</script>
+{% endblock %}
