@@ -302,6 +302,66 @@ footer {
   padding-top: 10px;
   padding-bottom: 10px;
   position: absolute;
-  color: white;
+  color: #ffffff;
   text-align: center;
+}
+
+// form
+
+#form_vavra_interiery {
+  font-family: RalewayRegular;
+  label {
+    display: none;
+  }
+  .form-input-dark input, .form-input-dark textarea {
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+    border-bottom: 2px solid #676767;
+    border-radius: 0px;
+    color: #ffffff;
+    &:focus {
+      border-bottom-color: #719216!important;
+    }
+    &:hover {
+      border-bottom-color: #8c8c8c;
+    }
+  }
+  ::-webkit-input-placeholder {
+    color: #b3b3b3!important;
+  }
+
+  :-moz-placeholder { /* Firefox 18- */
+    color: #b3b3b3!important;
+  }
+
+  ::-moz-placeholder {  /* Firefox 19+ */
+    color: #b3b3b3!important;
+  }
+
+  :-ms-input-placeholder {  
+    color: #b3b3b3!important;
+  }
+  textarea {
+    height: 120px !important;
+    resize: none;
+    border: none!important;
+  }
+  .modal-footer {
+    border-top: none;
+    text-align: center;
+    .btn-submit-footer-modal {
+      border: 1px solid #ffffff;
+      background-color: transparent;
+      color: #ffffff;
+      border-radius: 0px;
+      padding: 9px 26px;
+      font-weight: bold;
+      font-size: 16px;
+      &:hover {
+        color: #CCC;
+        border: 1px solid #999999;
+      }
+    }
+  }
 }

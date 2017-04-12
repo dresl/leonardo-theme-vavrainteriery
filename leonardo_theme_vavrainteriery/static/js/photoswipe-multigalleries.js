@@ -149,8 +149,12 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
                     rect = thumbnail.getBoundingClientRect(); 
 
                 return {x:rect.left, y:rect.top + pageYScroll, w:rect.width};
-            }
-
+            },
+            maxSpreadZoom: 1,
+            getDoubleTapZoom: function (isMouseClick, item) {
+                return item.initialZoomLevel;
+            },
+            zoomEl: false
         };
 
         // PhotoSwipe opened from URL
@@ -202,4 +206,4 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
 };
 
 // execute above function
-initPhotoSwipeFromDOM('.my-gallery');
+initPhotoSwipeFromDOM('.photoswipe-multi-gallery');

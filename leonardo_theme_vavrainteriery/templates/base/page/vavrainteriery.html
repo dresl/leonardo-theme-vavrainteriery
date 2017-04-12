@@ -29,6 +29,16 @@
     <footer>
       {% feincms_render_region feincms_page "footer" request %}
     </footer>
+    <script type="text/javascript">
+        var height1 = $(".navbar.navbar-fixed-top").height();
+        var height2 = $("footer").height();
+        var height3 = $(".slider-pagination").height();
+        var height4 = $(".kkadavymodule-base-default").height();
+        var sum_heights = height1+height2+height3+height4;
+        var window_height = window.innerHeight;
+        var final_height = (window_height - sum_heights)-120;
+        $(".map-vavra-interiery").css("height", final_height);
+    </script>
     {% include "horizon/_scripts.html" %}
     {% feincms_render_region feincms_page "helper" request %}
     <div id="modal_wrapper"></div>

@@ -1,0 +1,43 @@
+{% extends widget.get_base_template %}
+{% load i18n staticfiles %}
+
+{% block content %}
+&nbsp;
+<a class="ajax-modal" href="{% url 'poslat_zpravu_interiery' %}" onclick="UpdateModalFormOrder();">
+    <img class="img-responsive" id='btn-poslat-image' src="{% static 'img/napiste_btn_trans.png' %}" width="200px" onmouseover="onHover();" onmouseout="offHover();" />
+</a>
+<script type="text/javascript">
+function onHover()
+{
+    $("#btn-poslat-image").attr("src", "{% static 'img/napiste_btn_white.png' %}");
+}
+function offHover()
+{
+    $("#btn-poslat-image").attr("src", "{% static 'img/napiste_btn_trans.png' %}");
+}
+function UpdateModalFormOrder() {
+    var interval_id = setInterval(function(){
+        var x = document.getElementById("modal-full-screen");
+        x.style.display="none";
+        var x = document.getElementById("form_vavra_interiery").parentElement;
+        x.style.backgroundColor="#212226";
+        var y = x.childNodes[1];
+        y.style.borderBottom = "none";
+        y.getElementsByTagName("H3")[0].style.display = "block";
+        y.getElementsByTagName("H3")[0].style.background = "url(/static/img/logo_vavra_small.png)";
+        y.getElementsByTagName("H3")[0].style.color = "transparent";
+        y.getElementsByTagName("H3")[0].style.height = "40px";
+        y.getElementsByTagName("H3")[0].style.backgroundRepeat = "no-repeat";
+        y.getElementsByTagName("H3")[0].style.backgroundSize = "83px";
+        $("a.close").click(function() {    
+            var killId = setTimeout(function() {
+              for (var i = killId; i > 0; i--) clearInterval(i)
+            }, 1000);
+        });
+    }, 400);
+    setTimeOut(function(){    
+        clearInterval(interval_id);
+    }, 1000);
+}
+</script>
+{% endblock %}
