@@ -5,7 +5,6 @@ LEONARDO_APPS = [
 ]
 
 LEONARDO_JS_FILES = [
-    'js/vavra_interiery.js',
     'js/photoswipe.min.js',
     'js/photoswipe-ui-default.min.js',
     'js/photoswipe-multigalleries.js',
